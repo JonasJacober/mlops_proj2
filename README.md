@@ -47,29 +47,29 @@ docker build -t mrpc-trainer:cuda .
 
 ### Run training (GPU)
 
-```bash
-docker run --rm -it --gpus all `
---ipc=host --shm-size=1g `
--v "$PWD/checkpoints:/app/checkpoints" `
--v "$PWD/.cache/hf:/cache/hf" `
--v "$PWD/.cache/wandb:/cache/wandb" `
--v "$PWD/.cache/tmp:/cache/tmp" `
--e TMPDIR=/cache/tmp `
--e TOKENIZERS_PARALLELISM=false `
--e WANDB_API_KEY=efd04a408920fa4c05d378945a372d6a293a2652 `
--e WANDB_PROJECT=mrpc-tuning `
-mrpc-trainer:cuda `
-python main.py `
---task_name mrpc `
---learning_rate 2e-5 `
---scheduler_name cosine `
---weight_decay 0.01 `
---warmup_ratio 0.06 `
---optimizer_name AdamW `
---epochs 3 `
---devices 1 --accelerator gpu `
---checkpoint_dir /app/checkpoints `
---num_workers 0 `
+```powershell
+docker run --rm -it --gpus all \
+--ipc=host --shm-size=1g \
+-v "$PWD/checkpoints:/app/checkpoints" \
+-v "$PWD/.cache/hf:/cache/hf" \
+-v "$PWD/.cache/wandb:/cache/wandb" \
+-v "$PWD/.cache/tmp:/cache/tmp" \
+-e TMPDIR=/cache/tmp \
+-e TOKENIZERS_PARALLELISM=false \
+-e WANDB_API_KEY=efdXXXXXXXXXXXXXX \
+-e WANDB_PROJECT=mrpc-tuning \
+mrpc-trainer:cuda \
+python main.py \
+--task_name mrpc \
+--learning_rate 2e-5 \
+--scheduler_name cosine \
+--weight_decay 0.01 \
+--warmup_ratio 0.06 \
+--optimizer_name AdamW \
+--epochs 3 \
+--devices 1 --accelerator gpu \
+--checkpoint_dir /app/checkpoints \
+--num_workers 0 \
 --log_wandb
 ```
 
