@@ -1,0 +1,21 @@
+{
+    "name": "MLOPS Project 2",
+    "build": {
+        "dockerfile": "../Dockerfile",
+        "context": ".."
+    },
+    "runArgs": [
+        "--shm-size=2g"
+    ],
+    "workspaceFolder": "/workspace",
+    "forwardPorts": [
+        6006
+    ],
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-azuretools.vscode-docker"
+            ]
+        }
+    }
+}
