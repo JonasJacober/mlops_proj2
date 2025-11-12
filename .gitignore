@@ -6,6 +6,7 @@ __pycache__/
 *.so
 .env
 .venv
+
 *.egg-info/
 dist/
 build/
@@ -13,6 +14,9 @@ build/
 # Training artifacts
 models/
 runs/
+.cache/
+checkpoints/
+wandb/
 
 # VS Code / Codespaces
 .vscode/

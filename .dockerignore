@@ -1,0 +1,16 @@
+.git
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.swp
+*.tmp
+dist/
+build/
+.venv/
+.cache/
+.cache/hf/
+.cache/wandb/
+wandb/
+checkpoints/
+.data/
